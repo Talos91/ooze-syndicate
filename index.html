@@ -93,8 +93,8 @@ body {
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><style>body{background:#080e14}canvas{touch-action:none}</style>
-	</head>
-	<body>
+	<style>#rotate{display:none}@media (orientation:portrait) and (max-width:900px){#rotate{display:flex;position:fixed;inset:0;z-index:999;background:#08121ef5;color:#72e7ed;align-items:center;justify-content:center;text-align:center;font:22px system-ui;padding:32px}}</style></head>
+	<body><div id="rotate">Rotate your phone to landscape<br>Ooze Syndicate needs room to expand.</div>
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
 		</canvas>
@@ -111,7 +111,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":78161604,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"mainPack":"alpha9-c661c682e045.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha9-c661c682e045.pck":78161940,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
