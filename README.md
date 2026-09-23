@@ -1,3 +1,7 @@
+# Alpha 11 current release
+
+Play https://talos91.github.io/ooze-syndicate/alpha11/ . New UI flow, shared arena kit, faction lighting, FFA targeting and radial auto-close.
+
 # Ooze Syndicate — Alpha 9 browser preview
 
 Godot 4.6.1, single-thread WebGL 2 export. Work in progress; four existing arenas. New maps are deferred to Alpha 10.
