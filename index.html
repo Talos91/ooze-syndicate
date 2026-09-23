@@ -114,7 +114,7 @@ html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"mainPack":"alpha9-ef5f13c0d3fa.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha9-ef5f13c0d3fa.pck":78163380,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"mainPack":"alpha9-2f0199814f01.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha9-2f0199814f01.pck":88501268,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -218,7 +218,7 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
-	<div id="launch"><div><h1>OOZE SYNDICATE</h1><p>Alpha 9 · browser playtest</p><button id="play">PLAY FULLSCREEN</button><button id="windowed">Continue in browser window</button><p id="install-note">First load downloads about 116 MB. Use landscape.<br>On iPhone: Share → Add to Home Screen for an app-style view.</p></div></div><button id="expand" title="Hide the browser bars">Fullscreen ⛶</button>
+	<div id="launch"><div><h1>OOZE SYNDICATE</h1><p>Alpha 9 · browser playtest</p><button id="play">PLAY FULLSCREEN</button><button id="windowed">Continue in browser window</button><p id="install-note">First load downloads about 126 MB. Use landscape.<br>On iPhone: Share → Add to Home Screen for an app-style view.</p></div></div><button id="expand" title="Hide the browser bars">Fullscreen</button>
 <script>
 (()=>{const launch=document.getElementById('launch'),expand=document.getElementById('expand');
 async function full(){try{if(!document.fullscreenElement&&document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}catch(e){}launch.style.display='none';expand.style.display=document.fullscreenElement?'none':'';document.getElementById('canvas').focus();}

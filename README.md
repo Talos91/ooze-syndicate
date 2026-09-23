@@ -11,6 +11,8 @@ Owned villages start with 1 unit, neutrals with 30. Production caps: 30/40/80/16
 
 This repository contains the public web player only. Editable project and original art remain in the local project archive. All artwork and game content: all rights reserved.
 
-Mobile: use Play fullscreen, then New Game. On iPhone use Add to Home Screen if fullscreen is unavailable. Touch controls and fullscreen activation were verified in browser emulation; actual device performance still needs testing. First load is about 116 MB before server compression. A previous data pack is retained for cached HTML compatibility and is not downloaded by the current page.
+Mobile: use Play fullscreen, then New Game. On iPhone use Add to Home Screen if fullscreen is unavailable. Touch controls and fullscreen activation were verified in browser emulation; actual device performance still needs testing. First load is about 126 MB before server compression. A previous data pack is retained for cached HTML compatibility and is not downloaded by the current page.
 
 AI is autonomous: independent clocks, defense first, coordinated capture planning, and coverage-based cannon placement. Balance, combat, AI and four-arena UI tests pass 165 checks.
+
+Forge hotfix: convert a vat for 20 units; upgrade for 40/60. Forges stop producing but the strongest completed owned forge grants +0.5/+1/+1.5 attack faction-wide, without stacking. Damage bonuses apply at impact and change with forge ownership. Neutral vats now regenerate to their tier cap.
