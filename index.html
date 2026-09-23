@@ -93,7 +93,10 @@ body {
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><style>body{background:#080e14}canvas{touch-action:none}</style>
-	<style>#rotate{display:none}@media (orientation:portrait) and (max-width:900px){#rotate{display:flex;position:fixed;inset:0;z-index:999;background:#08121ef5;color:#72e7ed;align-items:center;justify-content:center;text-align:center;font:22px system-ui;padding:32px}}</style></head>
+	<style>#rotate{display:none}@media (orientation:portrait) and (max-width:900px){#rotate{display:flex;position:fixed;inset:0;z-index:999;background:#08121ef5;color:#72e7ed;align-items:center;justify-content:center;text-align:center;font:22px system-ui;padding:32px}}</style><link rel="manifest" href="app.webmanifest"><meta name="theme-color" content="#08121e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#launch{position:fixed;inset:0;z-index:800;background:#08121eef;color:#d7faff;display:flex;align-items:center;justify-content:center;text-align:center;font:18px system-ui}#launch>div{max-width:520px;padding:24px}#launch h1{letter-spacing:3px}#launch button,#expand{font:700 18px system-ui;border:1px solid #41e8f2;border-radius:8px;background:#0d3542;color:white;padding:16px 24px;cursor:pointer;touch-action:manipulation}#launch #play{background:#15d4e3;color:#04212b;display:block;width:100%;margin:20px 0 12px}#launch #windowed{border:0;background:transparent;font-size:14px;padding:10px}#expand{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));z-index:600;font-size:13px;padding:12px}#install-note{font-size:14px;line-height:1.5;color:#b3cbd2}#canvas{touch-action:none}
+</style></head>
 	<body><div id="rotate">Rotate your phone to landscape<br>Ooze Syndicate needs room to expand.</div>
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
@@ -111,7 +114,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"mainPack":"alpha9-5e7d63684908.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha9-5e7d63684908.pck":78161988,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"mainPack":"alpha9-d5557edf12c6.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha9-d5557edf12c6.pck":78162052,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -215,6 +218,14 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
-	</body>
+	<div id="launch"><div><h1>OOZE SYNDICATE</h1><p>Alpha 9 · browser playtest</p><button id="play">PLAY FULLSCREEN</button><button id="windowed">Continue in browser window</button><p id="install-note">First load downloads about 116 MB. Use landscape.<br>On iPhone: Share → Add to Home Screen for an app-style view.</p></div></div><button id="expand" title="Hide the browser bars">Fullscreen ⛶</button>
+<script>
+(()=>{const launch=document.getElementById('launch'),expand=document.getElementById('expand');
+async function full(){try{if(!document.fullscreenElement&&document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}catch(e){}launch.style.display='none';expand.style.display=document.fullscreenElement?'none':'';document.getElementById('canvas').focus();}
+document.getElementById('play').addEventListener('click',full);expand.addEventListener('click',full);document.getElementById('windowed').addEventListener('click',()=>{launch.style.display='none';document.getElementById('canvas').focus()});document.addEventListener('fullscreenchange',()=>{expand.style.display=document.fullscreenElement?'none':''});
+if(matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches||navigator.standalone){launch.style.display='none';expand.style.display='none';}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
+})();
+</script></body>
 </html>
 
