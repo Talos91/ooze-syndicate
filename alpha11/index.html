@@ -96,6 +96,11 @@ body {
 	<style>#rotate{display:none}@media (orientation:portrait) and (max-width:900px){#rotate{display:flex;position:fixed;inset:0;z-index:999;background:#08121ef5;color:#72e7ed;align-items:center;justify-content:center;text-align:center;font:22px system-ui;padding:32px}}</style><link rel="manifest" href="app.webmanifest"><meta name="theme-color" content="#08121e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#launch{position:fixed;inset:0;z-index:800;background:#08121eef;color:#d7faff;display:flex;align-items:center;justify-content:center;text-align:center;font:18px system-ui}#launch>div{max-width:520px;padding:24px}#launch h1{letter-spacing:3px}#launch button,#expand{font:700 18px system-ui;border:1px solid #41e8f2;border-radius:8px;background:#0d3542;color:white;padding:16px 24px;cursor:pointer;touch-action:manipulation}#launch #play{background:#15d4e3;color:#04212b;display:block;width:100%;margin:20px 0 12px}#launch #windowed{border:0;background:transparent;font-size:14px;padding:10px}#expand{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));z-index:600;font-size:13px;padding:12px}#install-note{font-size:14px;line-height:1.5;color:#b3cbd2}#canvas{touch-action:none}
+#launch{background:linear-gradient(90deg,#020b12d9,#020b1240),url('launcher-art.png') center/cover;justify-content:flex-start;padding-left:5vw;box-sizing:border-box}
+#launch>div{width:min(480px,80vw);background:#020b12ee;border:1px solid #4b8d9b;padding:36px;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px)}
+#launch .brand{width:100%;max-height:230px;object-fit:contain}#launch button{border-radius:0;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px)}
+@media(max-height:500px){#launch>div{padding:16px;width:360px}#launch .brand{max-height:115px}#launch p{margin:6px}#launch #play{margin:10px 0 4px;padding:12px}#install-note{font-size:12px}}
+
 </style></head>
 	<body><div id="rotate">Rotate your phone to landscape<br>Ooze Syndicate needs room to expand.</div>
 		<canvas id="canvas">
@@ -114,7 +119,7 @@ html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"mainPack":"alpha11-8c276aa61c26.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha11-8c276aa61c26.pck":96112792,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"mainPack":"alpha11-f92d1b9ec286.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha11-f92d1b9ec286.pck":99762720,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -218,7 +223,7 @@ const engine = new Engine(GODOT_CONFIG);
 	}
 }());
 		</script>
-	<div id="launch"><div><h1>OOZE SYNDICATE</h1><p>Alpha 11 · browser playtest</p><button id="play">PLAY FULLSCREEN</button><button id="windowed">Continue in browser window</button><p id="install-note">First load downloads about 127 MB. Use landscape.<br>On iPhone: Share → Add to Home Screen for an app-style view.</p></div></div><button id="expand" title="Hide the browser bars">Fullscreen</button>
+	<div id="launch"><div><img class="brand" src="brand-logo.svg" alt="Ooze Syndicate - Better sludge. Fewer questions."><p>Alpha 11 · browser playtest</p><button id="play">PLAY FULLSCREEN</button><button id="windowed">Continue in browser window</button><p id="install-note">First load downloads about 127 MB. Use landscape.<br>On iPhone: Share → Add to Home Screen for an app-style view.</p></div></div><button id="expand" title="Hide the browser bars">Fullscreen</button>
 <script>
 (()=>{const launch=document.getElementById('launch'),expand=document.getElementById('expand');
 async function full(){try{if(!document.fullscreenElement&&document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}catch(e){}launch.style.display='none';expand.style.display=document.fullscreenElement?'none':'';document.getElementById('canvas').focus();}

@@ -24,3 +24,6 @@ Forge hotfix: convert a vat for 20 units; upgrade for 40/60. Forges stop produci
 ## Alpha 10 map preview
 
 Play https://talos91.github.io/ooze-syndicate/alpha10/ . Includes 28 new playable map interpretations, the four legacy arenas, faction forges, and double-tap village upgrades. Alpha 9 remains at the root URL. Mobile landscape browser supported; first download about 127 MB before compression. Browser multiplayer remains unavailable.
+
+### Alpha 11 UI fidelity update
+Cinematic main menu, supplied vector logo, illustrated faction selection with coming-soon ability descriptions, neon interface panels, portrait-based setup, segmented settings and refreshed loading/results/options. Play at https://talos91.github.io/ooze-syndicate/alpha11/ .
