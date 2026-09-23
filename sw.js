@@ -1,4 +1,4 @@
-const CACHE='ooze-alpha9-631a209fa212';
-self.addEventListener('install',e=>self.skipWaiting());
-self.addEventListener('activate',e=>e.waitUntil((async()=>{for(const k of await caches.keys())if(k.startsWith('ooze-alpha9-')&&k!==CACHE)await caches.delete(k);await self.clients.claim();})()));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;e.respondWith((async()=>{const c=await caches.open(CACHE);if(e.request.mode==='navigate'){try{const r=await fetch(e.request);if(r.ok)await c.put('./',r.clone());return r}catch(err){return (await c.match('./'))||Response.error()}}const hit=await c.match(e.request);if(hit)return hit;const r=await fetch(e.request);if(r.ok){try{await c.put(e.request,r.clone())}catch(err){}}return r;})());});
+// The main share link now points to Alpha 11. Retire only this game's old Alpha 9 cache.
+self.addEventListener('install',()=>self.skipWaiting());
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('ooze-alpha9-'))await caches.delete(key);await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{const url=new URL(event.request.url),root=new URL(self.registration.scope);if(event.request.mode==='navigate'&&url.origin===root.origin&&(url.pathname===root.pathname||url.pathname===root.pathname+'index.html'))event.respondWith(Promise.resolve(Response.redirect(new URL('alpha11/?release=95e4db6',root).href,302)));});

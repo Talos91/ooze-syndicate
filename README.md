@@ -1,3 +1,9 @@
+# Play the latest release
+
+**Alpha 11: https://talos91.github.io/ooze-syndicate/**
+
+The main share link automatically opens Alpha 11. Previous Alpha 9 is preserved at https://talos91.github.io/ooze-syndicate/alpha9/ .
+
 # Alpha 11 current release
 
 Play https://talos91.github.io/ooze-syndicate/alpha11/ . New UI flow, shared arena kit, faction lighting, FFA targeting and radial auto-close.
