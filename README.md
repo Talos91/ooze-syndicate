@@ -16,3 +16,7 @@ Mobile: use Play fullscreen, then New Game. On iPhone use Add to Home Screen if 
 AI is autonomous: independent clocks, defense first, coordinated capture planning, and coverage-based cannon placement. Balance, combat, AI and four-arena UI tests pass 165 checks.
 
 Forge hotfix: convert a vat for 20 units; upgrade for 40/60. Forges stop producing but the strongest completed owned forge grants +0.5/+1/+1.5 attack faction-wide, without stacking. Damage bonuses apply at impact and change with forge ownership. Neutral vats now regenerate to their tier cap.
+
+## Alpha 10 map preview
+
+Play https://talos91.github.io/ooze-syndicate/alpha10/ . Includes 28 new playable map interpretations, the four legacy arenas, faction forges, and double-tap village upgrades. Alpha 9 remains at the root URL. Mobile landscape browser supported; first download about 127 MB before compression. Browser multiplayer remains unavailable.
