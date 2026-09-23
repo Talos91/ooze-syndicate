@@ -1,35 +1,20 @@
-# Play the latest release
+# Ooze Syndicate — Alpha 11
 
-**Alpha 11: https://talos91.github.io/ooze-syndicate/**
+Play: https://talos91.github.io/ooze-syndicate/alpha11/
 
-The main share link automatically opens Alpha 11. Previous Alpha 9 is preserved at https://talos91.github.io/ooze-syndicate/alpha9/ .
+The root link also opens Alpha 11. Earlier versions remain at /alpha9/ and /alpha10/.
 
-# Alpha 11 current release
+## This update
 
-Play https://talos91.github.io/ooze-syndicate/alpha11/ . New UI flow, shared arena kit, faction lighting, FFA targeting and radial auto-close.
+- Online browser rooms with PeerJS: 1v1, four-player free-for-all and 2v2. Create a room and share its code. Keep the host tab open and active. Public signalling, direct WebRTC; no TURN relay or host migration. Some networks may fail to connect. Windows ENet rooms are separate.
+- Five AI difficulties with delayed/noisy estimates and coarse troop dispatch.
+- Neutral half caps: 15/20/40/80. Owned production caps: 30/40/80/160. Reinforcements may exceed caps. Cannon recharge: 4/2.4/1.6 seconds after two-second firing.
+- One live skill for every faction; remaining abilities and traits Coming soon.
+- Action-based tutorial, replayable chapters and saved progress.
+- Shared arena lighting, larger animated troops, skill effects, and T1–T4 vat surface cleanup.
 
-# Ooze Syndicate — Alpha 9 browser preview
+On iPhone open in Safari, Share → Add to Home Screen, enable Open as Web App if offered, then launch the icon in landscape. Fullscreen support varies by browser. Real phone and separate-network playtesting remain necessary.
 
-Godot 4.6.1, single-thread WebGL 2 export. Work in progress; four existing arenas. New maps are deferred to Alpha 10.
+Built with Godot 4.6.1 single-thread WebGL2. Public player only; editable source and approved art are maintained in the project archive. Artwork/game content: all rights reserved. PeerJS license is included.
 
-Enable GitHub Pages: Settings → Pages → Deploy from a branch → main → / (root).
-Expected URL: https://talos91.github.io/ooze-syndicate/
-
-Use landscape orientation. Play against 1–4 AI opponents. Browser multiplayer is not available; the separate Alpha 8 Windows release supports LAN/direct-IP multiplayer.
-
-Owned villages start with 1 unit, neutrals with 30. Production caps: 30/40/80/160, incoming troops may exceed them. Vat upgrades cost 10/20/30; cannon tiers cost 15/25/35. Construction takes 5 seconds. Cannons blast for 2 seconds including friendly fire.
-
-This repository contains the public web player only. Editable project and original art remain in the local project archive. All artwork and game content: all rights reserved.
-
-Mobile: use Play fullscreen, then New Game. On iPhone use Add to Home Screen if fullscreen is unavailable. Touch controls and fullscreen activation were verified in browser emulation; actual device performance still needs testing. First load is about 126 MB before server compression. A previous data pack is retained for cached HTML compatibility and is not downloaded by the current page.
-
-AI is autonomous: independent clocks, defense first, coordinated capture planning, and coverage-based cannon placement. Balance, combat, AI and four-arena UI tests pass 165 checks.
-
-Forge hotfix: convert a vat for 20 units; upgrade for 40/60. Forges stop producing but the strongest completed owned forge grants +0.5/+1/+1.5 attack faction-wide, without stacking. Damage bonuses apply at impact and change with forge ownership. Neutral vats now regenerate to their tier cap.
-
-## Alpha 10 map preview
-
-Play https://talos91.github.io/ooze-syndicate/alpha10/ . Includes 28 new playable map interpretations, the four legacy arenas, faction forges, and double-tap village upgrades. Alpha 9 remains at the root URL. Mobile landscape browser supported; first download about 127 MB before compression. Browser multiplayer remains unavailable.
-
-### Alpha 11 UI fidelity update
-Cinematic main menu, supplied vector logo, illustrated faction selection with coming-soon ability descriptions, neon interface panels, portrait-based setup, segmented settings and refreshed loading/results/options. Play at https://talos91.github.io/ooze-syndicate/alpha11/ .
+Release pack: alpha11-2cea19783b93.pck
