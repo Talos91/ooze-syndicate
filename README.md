@@ -1,3 +1,7 @@
+# Mobile browser update
+
+Four-character rooms; native phone keyboard/paste and Copy; larger touch layouts and swipeable maps; lighter phone renderer; reduced snapshot overhead and delay. Reload every device and create a new room. Physical phone frame-rate and separate-network testing still required.
+
 # Ooze Syndicate — Alpha 11
 
 Play: https://talos91.github.io/ooze-syndicate/alpha11/
@@ -17,4 +21,4 @@ On iPhone open in Safari, Share → Add to Home Screen, enable Open as Web App i
 
 Built with Godot 4.6.1 single-thread WebGL2. Public player only; editable source and approved art are maintained in the project archive. Artwork/game content: all rights reserved. PeerJS license is included.
 
-Release pack: alpha11-2cea19783b93.pck
+Release pack: alpha11-267a4ad3023b.pck

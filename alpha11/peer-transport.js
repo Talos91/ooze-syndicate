@@ -1,8 +1,8 @@
 /* PeerJS transport only. Godot's host simulation owns all game rules. */
 (function () {
   let peer = null, host = false, events = [], links = new Map(), epoch = 0;
-  const prefix = 'ooze11-';
-  function emit(event) { if (events.length < 256) events.push(event); }
+  const prefix = 'ooze11m-';
+  function emit(event) { if(event.type==='data' && event.data.startsWith('{"kind":"state"')) { const i=events.findIndex(e=>e.type==='data'&&e.peer===event.peer&&e.data.startsWith('{"kind":"state"')); if(i>=0){events[i]=event;return;} } if (events.length < 256) events.push(event); }
   function bind(conn, token) {
     if (links.size >= 4 || links.has(conn.peer)) { conn.close(); return; }
     links.set(conn.peer, conn);
@@ -12,19 +12,19 @@
     conn.on('error', () => { if (token === epoch) emit({type:'closed',peer:conn.peer}); });
   }
   window.OozePeer = {
-    start(isHost, code) {
+    start(isHost, code, attempt=0) {
       this.close(); host=!!isHost; const token=epoch;
       if (typeof Peer !== 'function') { emit({type:'error',message:'PeerJS did not load. Refresh the page.'}); return; }
-      if (!host && !/^[A-Z2-9]{8}$/.test(code)) { emit({type:'error',message:'Enter the eight-character room code.'}); return; }
+      if (!host && !/^[A-HJ-NP-Z2-9]{4}$/.test(code)) { emit({type:'error',message:'Enter the four-character room code.'}); return; }
       let id;
-      if (host) { const bytes=crypto.getRandomValues(new Uint8Array(8));const alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';id=prefix+Array.from(bytes,b=>alphabet[b%alphabet.length]).join(''); }
+      if (host) { const bytes=crypto.getRandomValues(new Uint8Array(4));const alphabet='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';id=prefix+Array.from(bytes,b=>alphabet[b%alphabet.length]).join(''); }
       peer=host?new Peer(id,{debug:0}):new Peer({debug:0});
       peer.on('open', id => { if(token!==epoch)return;emit({type:'open',code:host?id.slice(prefix.length):code});if(!host)bind(peer.connect(prefix+code,{reliable:true,serialization:'raw'}),token); });
       peer.on('connection', conn => { if(token!==epoch || !host){conn.close();return;}bind(conn,token); });
-      peer.on('error', err => { if(token===epoch)emit({type:'error',message:err.type==='peer-unavailable'?'Room not found. Check the code and keep the host online.':'Connection failed ('+err.type+'). Try another network or recreate the room.'}); });
+      peer.on('error', err => { if(token===epoch && host && err.type==='unavailable-id' && attempt<5){this.start(true,'',attempt+1);return;} if(token===epoch)emit({type:'error',message:err.type==='peer-unavailable'?'Room not found. Check the code and keep the host online.':'Connection failed ('+err.type+'). Try another network or recreate the room.'}); });
       peer.on('disconnected', () => { if(token===epoch)emit({type:'signalling-lost'}); });
     },
-    send(id, data) { const conn=links.get(id); if(!conn || !conn.open || conn.bufferSize>16)return false;conn.send(data);return true; },
+    send(id, data) { const conn=links.get(id); if(!conn || !conn.open)return false; if(data.startsWith('{"kind":"state"') && (conn.bufferSize>0 || (conn.dataChannel && conn.dataChannel.bufferedAmount>65536)))return false;conn.send(data);return true; },
     closePeer(id) { const conn=links.get(id);if(conn)conn.close(); },
     poll() { const result=JSON.stringify(events);events=[];return result; },
     close() { epoch++; for(const conn of links.values())conn.close();links.clear();if(peer)peer.destroy();peer=null;events=[]; }

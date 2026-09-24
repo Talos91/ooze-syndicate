@@ -99,9 +99,10 @@ html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#
 #launch{background:linear-gradient(90deg,#020b12d9,#020b1240),url('launcher-art.png') center/cover;justify-content:flex-start;padding-left:5vw;box-sizing:border-box}
 #launch>div{width:min(480px,80vw);background:#020b12ee;border:1px solid #4b8d9b;padding:36px;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px)}
 #launch .brand{width:100%;max-height:230px;object-fit:contain}#launch button{border-radius:0;clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px)}
+@media(pointer:coarse){#expand{display:none!important}}
 @media(max-height:500px){#launch>div{padding:16px;width:360px}#launch .brand{max-height:115px}#launch p{margin:6px}#launch #play{margin:10px 0 4px;padding:12px}#install-note{font-size:12px}}
 
-</style><script src="peerjs.min.js?v=1.5.5"></script><script src="peer-transport.js?v=alpha11-peer-1"></script></head>
+</style><script src="peerjs.min.js?v=1.5.5"></script><script src="peer-transport.js?v=alpha11-mobile-2"></script><script src="mobile-ui.js?v=alpha11-mobile-2"></script></head>
 	<body><div id="rotate">Rotate your phone to landscape<br>Ooze Syndicate needs room to expand.</div>
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
@@ -119,7 +120,7 @@ html,body{height:100%;height:100dvh;overscroll-behavior:none;touch-action:none}#
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"mainPack":"alpha11-2cea19783b93.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha11-2cea19783b93.pck":96827872,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_CONFIG = {"mainPack":"alpha11-267a4ad3023b.pck","args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"alpha11-267a4ad3023b.pck":96837568,"index.wasm":37685705},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 

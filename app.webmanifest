@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Ooze Syndicate Alpha 11",
   "short_name": "Ooze",
-  "start_url": "./alpha11/?release=alpha11-2cea19783b93",
+  "start_url": "./alpha11/?release=alpha11-267a4ad3023b",
   "scope": "./",
   "display": "fullscreen",
   "orientation": "landscape",
