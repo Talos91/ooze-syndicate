@@ -1,3 +1,7 @@
+# Room rematch and chat
+
+Everyone taps Rematch on the results screen to play again in the same room. Room-wide chat works in the lobby, match and results, using native browser text entry on phones. Chat remains between rounds. A guest leaving returns others to the same lobby; host departure still closes the room. Reload all players for this update.
+
 # Mobile browser update
 
 Four-character rooms; native phone keyboard/paste and Copy; larger touch layouts and swipeable maps; lighter phone renderer; reduced snapshot overhead and delay. Reload every device and create a new room. Physical phone frame-rate and separate-network testing still required.
@@ -21,4 +25,4 @@ On iPhone open in Safari, Share → Add to Home Screen, enable Open as Web App i
 
 Built with Godot 4.6.1 single-thread WebGL2. Public player only; editable source and approved art are maintained in the project archive. Artwork/game content: all rights reserved. PeerJS license is included.
 
-Release pack: alpha11-267a4ad3023b.pck
+Release pack: alpha11-028e65873dcb.pck
