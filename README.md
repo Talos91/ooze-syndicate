@@ -2,7 +2,7 @@
 
 [Play in your browser](https://talos91.github.io/ooze-syndicate/alpha11/). The root Pages link also opens Alpha 11. Historical Alpha 9 and Alpha 10 remain at their versioned paths.
 
-Current game release: **pending FFA publication**, pack **alpha11-292393832b59.pck** (96,842,288 bytes), protocol **alpha11-ffa-4**. Later documentation commits do not change the game build.
+Current game release: **bad870d**, pack **alpha11-292393832b59.pck** (96,842,288 bytes), protocol **alpha11-ffa-4**. Later documentation commits do not change the game build.
 
 ## Play with friends
 Choose Online, create a room and share its four-character code. Join supports phone keyboard/paste; sharing supports Copy. Modes are 2–5-player free-for-all and 2v2. After results, everyone taps Rematch to keep the same room. Room chat works in lobby, match and results and stays between rounds.
